@@ -5,6 +5,7 @@ const playerHpEl = document.getElementById('player-hp');
 const enemyInput = document.getElementById('enemy-input');
 const enemyButton = document.getElementById('add-enemy-button');
 const defeatedEnemiesEl = document.getElementById('defeated-enemies');
+const enemyEl = document.getElementById('enemies');
 
 /* State */
 let enemiesDefeated = 0;
@@ -22,7 +23,28 @@ enemyButton.addEventListener('click', () => {
     };
     enemies.push(addEnemy);
     enemyInput.value = '';
+    displayEnemies();
 });
 /* Display Functions */
-function displayEnemies() {}
+
+function renderEnemy(dataEnemy) {
+    const newEnemyEl = document.createElement('li');
+    const nameEl = document.createElement('p');
+    const symbolEl = document.createElement('p');
+    const enemyHpEl = document.createElement('p');
+
+    nameEl.textContent = dataEnemy.name;
+    enemyHpEl.textContent = dataEnemy.hp;
+
+    if (dataEnemy.hp > 0) {
+        symbolEl.textContent = '🎩';
+    } else {
+        symbolEl.textContent = '🩸';
+    }
+
+    newEnemyEl.classList.add('enemy');
+    newEnemyEl.append(nameEl, symbolEl, enemyHpEl);
+    return newEnemyEl;
+}
+
 // (don't forget to call any display functions you want to run on page load!)
