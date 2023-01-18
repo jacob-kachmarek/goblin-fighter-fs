@@ -70,4 +70,14 @@ main {
     border-radius: 5px;
     margin: 20px;
     cursor: pointer;
+    opacity: 60%;
+}
+
+.enemy:hover {
+    background-color: antiquewhite;
+}
+
+.defeated-enemies {
+    background-color: antiquewhite;
+    border-radius: 5px;
 }
