@@ -32,4 +32,42 @@ header .logo {
 
 main {
     padding: 20px;
+    background-image: url(../assets/Mobster-Background.jpg);
+    background-size: cover;
+}
+
+.left-section {
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    top: 10%;
+}
+
+.right-section {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    left: 60%;
+    top: 10%;
+}
+
+.player-model {
+    height: 500px;
+}
+
+.player-hp {
+    background-color: antiquewhite;
+    height: 70px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    word-wrap: break-word;
+}
+
+.enemy {
+    background-color: maroon;
+    height: 70px;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
 }

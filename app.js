@@ -1,6 +1,9 @@
 /* Imports */
 
 /* Get DOM Elements */
+const playerHp = document.getElementById('player-hp');
+const enemyInput = document.getElementById('enemy-input');
+const enemyButton = document.getElementById('');
 
 /* State */
 
