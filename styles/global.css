@@ -47,12 +47,12 @@ main {
     display: inline-block;
     position: relative;
     vertical-align: top;
-    left: 60%;
+    left: 50%;
     top: 10%;
 }
 
 .player-model {
-    height: 500px;
+    height: 450px;
 }
 
 .player-hp {
@@ -79,10 +79,12 @@ main {
 }
 
 .enemy:hover {
-    background-color: antiquewhite;
+    background-color: aqua;
 }
 
 .defeated-enemies {
     background-color: antiquewhite;
     border-radius: 5px;
+    height: 40px;
+    font-size: 25px;
 }

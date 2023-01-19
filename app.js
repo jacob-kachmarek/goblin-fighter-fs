@@ -1,5 +1,5 @@
 /* Imports */
-
+import { renderEnemy } from './utils.js';
 /* Get DOM Elements */
 const playerHpEl = document.getElementById('player-hp');
 const enemyInput = document.getElementById('enemy-input');
@@ -29,28 +29,29 @@ enemyButton.addEventListener('click', () => {
 function displayEnemies() {
     enemyEl.textContent = '';
     for (let enemy of enemies) {
-        const addEnemyEl = renderEnemy(enemy);
+        const addEnemyEl = renderEnemy(enemy, playerHp);
         addEnemyEl.addEventListener('click', () => {
             if (playerHp <= 0) {
                 alert('You have been iced');
                 return;
             }
             if (Math.random() > 0.2) {
-                alert('You have injured' + enemy.name);
+                alert('You have injured ' + enemy.name);
                 enemy.hp--;
                 if (enemy.hp === 0) {
-                    enemiesDefeated++;
                     defeatedEnemiesEl.textContent = `${enemiesDefeated}`;
+                    alert(enemy.name + ' sleeps with the fishes.');
+                    enemiesDefeated++;
                 }
             } else {
                 alert('you missed ' + enemy.name);
             }
 
             if (Math.random() > 0.7) {
-                alert(enemy.name + 'Shot back and hit!');
+                alert(enemy.name + ' Shot back and hit!');
                 playerHp--;
             } else {
-                alert(enemy.name + 'Shot back and missed');
+                alert(enemy.name + ' Shot back and missed');
             }
             playerHpEl.textContent = playerHp;
             displayEnemies();
@@ -59,25 +60,5 @@ function displayEnemies() {
     }
 }
 displayEnemies();
-
-function renderEnemy(dataEnemy) {
-    const newEnemyEl = document.createElement('li');
-    const nameEl = document.createElement('p');
-    const symbolEl = document.createElement('p');
-    const enemyHpEl = document.createElement('p');
-
-    nameEl.textContent = 'Name: ' + dataEnemy.name;
-    enemyHpEl.textContent = 'HP: ' + dataEnemy.hp;
-
-    if (dataEnemy.hp > 0) {
-        symbolEl.textContent = '🎩';
-    } else {
-        symbolEl.textContent = '🩸';
-    }
-
-    newEnemyEl.classList.add('enemy');
-    newEnemyEl.append(nameEl, symbolEl, enemyHpEl);
-    return newEnemyEl;
-}
 
 // (don't forget to call any display functions you want to run on page load!)
