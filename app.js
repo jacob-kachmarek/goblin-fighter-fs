@@ -66,8 +66,8 @@ function renderEnemy(dataEnemy) {
     const symbolEl = document.createElement('p');
     const enemyHpEl = document.createElement('p');
 
-    nameEl.textContent = dataEnemy.name;
-    enemyHpEl.textContent = dataEnemy.hp;
+    nameEl.textContent = 'Name: ' + dataEnemy.name;
+    enemyHpEl.textContent = 'HP: ' + dataEnemy.hp;
 
     if (dataEnemy.hp > 0) {
         symbolEl.textContent = '🎩';
