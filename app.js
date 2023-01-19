@@ -26,6 +26,39 @@ enemyButton.addEventListener('click', () => {
     displayEnemies();
 });
 /* Display Functions */
+function displayEnemies() {
+    enemyEl.textContent = '';
+    for (let enemy of enemies) {
+        const addEnemyEl = renderEnemy(enemy);
+        addEnemyEl.addEventListener('click', () => {
+            if (playerHp <= 0) {
+                alert('You have been iced');
+                return;
+            }
+            if (Math.random() > 0.2) {
+                alert('You have injured' + enemy.name);
+                enemy.hp--;
+                if (enemy.hp === 0) {
+                    enemiesDefeated++;
+                    defeatedEnemiesEl.textContent = `${enemiesDefeated}`;
+                }
+            } else {
+                alert('you missed ' + enemy.name);
+            }
+
+            if (Math.random() > 0.7) {
+                alert(enemy.name + 'Shot back and hit!');
+                playerHp--;
+            } else {
+                alert(enemy.name + 'Shot back and missed');
+            }
+            playerHpEl.textContent = playerHp;
+            displayEnemies();
+        });
+        enemyEl.append(addEnemyEl);
+    }
+}
+displayEnemies();
 
 function renderEnemy(dataEnemy) {
     const newEnemyEl = document.createElement('li');
