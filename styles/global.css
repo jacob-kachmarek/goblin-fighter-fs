@@ -32,4 +32,64 @@ header .logo {
 
 main {
     padding: 20px;
+    background-image: url(../assets/Mobster-Background.jpg);
+    background-size: cover;
+}
+
+.left-section {
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    top: 10%;
+}
+
+.right-section {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    left: 50%;
+    top: 10%;
+}
+
+.player-model {
+    height: 450px;
+}
+
+.player-hp {
+    background-color: antiquewhite;
+    height: 70px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    word-wrap: break-word;
+}
+
+.enemy {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../assets/Mobster-2.png);
+    background-size: 100px;
+    background-color: antiquewhite;
+    background-repeat: no-repeat;
+    height: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.enemy:hover {
+    background-color: aqua;
+}
+
+.defeated-enemies {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 25px;
+}
+
+.hide {
+    display: none;
 }
