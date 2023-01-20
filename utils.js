@@ -15,7 +15,19 @@ export function renderEnemy(dataEnemy, playerHp) {
     if (playerHp <= 0) {
         newEnemyEl.disabled = true;
     }
+
+    if (dataEnemy.hp === 0) {
+        hideDead();
+    }
+
+    function hideDead() {
+        newEnemyEl.classList.add('hide');
+    }
     newEnemyEl.classList.add('enemy');
     newEnemyEl.append(nameEl, symbolEl, enemyHpEl);
     return newEnemyEl;
+}
+
+export function hideDead() {
+    newEnemyEl.classList.add('hide');
 }

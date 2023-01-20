@@ -73,7 +73,6 @@ main {
     cursor: pointer;
     opacity: 80%;
     text-align: center;
-    word-wrap: ;
     margin-top: 30px;
     padding: 0px;
 }
@@ -87,4 +86,8 @@ main {
     border-radius: 5px;
     height: 40px;
     font-size: 25px;
+}
+
+.hide {
+    display: none;
 }

@@ -38,10 +38,10 @@ function displayEnemies() {
             if (Math.random() > 0.2) {
                 alert('You have injured ' + enemy.name);
                 enemy.hp--;
-                if (enemy.hp === 0) {
+                if (enemy.hp <= 0) {
+                    enemiesDefeated++;
                     defeatedEnemiesEl.textContent = `${enemiesDefeated}`;
                     alert(enemy.name + ' sleeps with the fishes.');
-                    enemiesDefeated++;
                 }
             } else {
                 alert('you missed ' + enemy.name);
@@ -53,6 +53,15 @@ function displayEnemies() {
             } else {
                 alert(enemy.name + ' Shot back and missed');
             }
+
+            if (playerHp === 0) {
+                alert('You have been iced...game over');
+                enemyButton.classList.add('hide');
+                enemyInput.classList.add('hide');
+                enemyButton.classList.add('hide');
+                enemyEl.classList.add('hide');
+            }
+
             playerHpEl.textContent = playerHp;
             displayEnemies();
         });
