@@ -66,12 +66,15 @@ main {
 
 .enemy {
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    background-image: url(../assets/Mobster-2.png);
+    background-size: 100px;
     background-color: antiquewhite;
-    height: 140px;
+    background-repeat: no-repeat;
+    height: 150px;
     border-radius: 5px;
     cursor: pointer;
-    opacity: 80%;
     text-align: center;
     margin-top: 30px;
     padding: 0px;
