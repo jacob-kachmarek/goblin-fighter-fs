@@ -1,5 +1,6 @@
 /* Imports */
 import { renderEnemy } from './utils.js';
+import { hideDead } from './utils.js';
 /* Get DOM Elements */
 const playerHpEl = document.getElementById('player-hp');
 const enemyInput = document.getElementById('enemy-input');
