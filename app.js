@@ -19,7 +19,7 @@ const enemies = [
 enemyButton.addEventListener('click', () => {
     const enemyName = enemyInput.value;
     const addEnemy = {
-        name: enemyName,
+        name: enemyName || `Mobster ${Math.ceil(Math.random() * 500)}`,
         hp: Math.ceil(Math.random() * 10),
     };
     enemies.push(addEnemy);
