@@ -27,7 +27,3 @@ export function renderEnemy(dataEnemy, playerHp) {
     newEnemyEl.append(nameEl, symbolEl, enemyHpEl);
     return newEnemyEl;
 }
-
-export function hideDead() {
-    newEnemyEl.classList.add('hide');
-}
